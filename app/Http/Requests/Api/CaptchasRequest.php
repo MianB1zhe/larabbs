@@ -4,7 +4,7 @@ namespace App\Http\Requests\Api;
 
 use Dingo\Api\Http\FormRequest;
 
-class VerificationCodeRequest extends FormRequest
+class CaptchasRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,7 @@ class VerificationCodeRequest extends FormRequest
     public function rules()
     {
         return [
-            'captcha_key' => 'required|string',
-            'captcha_code' => 'required|string',
-            //'phone' => 'required|regex:/^1[34578]\d{9}$/|unique:users',
+            'phone' => 'required|regex:/^1[34578]\d{9}$/|unique:users',
         ];
     }
 }
