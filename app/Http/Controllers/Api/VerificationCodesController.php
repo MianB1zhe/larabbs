@@ -20,6 +20,8 @@ class VerificationCodesController extends Controller
     			$result = $easySms->send($phone, [
     			'content' => "【lara项目】您的验证码是{$code}。如非本人操作，请忽略本短信"
     		]);
+    		}else{
+    			$code = '1234';
     		}
 	
     	} catch (\GuzzleHttp\Exception\ClientException $exception) {
